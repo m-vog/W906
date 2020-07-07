@@ -1,0 +1,1 @@
+FROM nginx:1.15.8-alpineLABEL version="1.0.0"ENV REFRESHED_AT=2019-12-02-1COPY index.html /usr/share/nginx/html/index.html

@@ -17,4 +17,30 @@ Läuft via Kubernetes.
 Erreichbar via 192.168.152.14:32100
 
 ## Pipeline
-Via Jenkins erstellt bei einem neuen Build einen neuen Release auf GitHub erstellt und ein neues Projekt im Kanboard angelegt.1
+Via Jenkins erstellt bei einem neuen Build einen neuen Release auf GitHub erstellt und ein neues Projekt im Kanboard angelegt.
+
+## K1
+Als Planungstool wird Kanboard verwendet.
+Kanboard kann man mit dem folgendem Command starten:
+```bash
+kubectl apply -f W906/kanboard.yaml
+```
+Kanboard ist mit Jenkins in der Pipeline verknüpft.
+
+## K2
+Als Versionsverwaltung wird Git, resp GitHub verwendet. Unser Fortschritt ist auf github.com/m-vog/w906 verfügbar.
+Bei allen Gruppenmitglieder ist das Repository eingrichtet. Die Gruppenmitglieder sind als Maintainer berechtigt.
+
+GitHub ist mit Jenkins in der Pipeline verknüpft.
+
+## K3
+Als Entwicklungsumbegung verwenden wir lokal installiert VSCode. Theia ist auch Verfügbar.
+Die Tools sind via Git in der Pipeline verknüpft.
+
+Theia kann man wie folgt starten:
+```bash
+kubectl apply -f W906/theia.yaml
+```
+
+## K4
+Als Build-Software wird wieder GitHub verwendet. 
