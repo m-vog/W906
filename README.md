@@ -43,4 +43,4 @@ kubectl apply -f W906/theia.yaml
 ```
 
 ## K4
-Als Build-Software wird wieder GitHub verwendet. 
+Als Build-Software wird eine Mischung aus GitHub und DockerHub verwendet.
