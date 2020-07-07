@@ -44,3 +44,8 @@ kubectl apply -f W906/theia.yaml
 
 ## K4
 Als Build-Software wird eine Mischung aus GitHub und DockerHub verwendet.
+Auf unserem Repository haben wir ein Dockerfile abgelegt. Das Repository haben wir mit unserem DockerHub Repository verknüft. Das heisst; wenn ein neuer Commit in das GitHub Repo gepushed wird, triggered DockerHub einen automatischen Build von unserem Dockerfile.
+
+![DockerHub build](https://github.com/m-vog/W906/blob/master/img/dockerhub.PNG)
+
+Zusätzlich kann man über DockerHub direkt einen Test starten
