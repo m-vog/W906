@@ -52,14 +52,43 @@ Auf unserem Repository haben wir ein Dockerfile abgelegt. Das Repository haben w
 Zusätzlich kann man über DockerHub direkt einen Test starten
 
 ## K5
+Für CI verwenden wir code-inspector.com Man muss auf GitHub zwei API Keys von code-inspector hinterlegen und ein Config-File unter ```ruby
+.github/workflows/main.yaml
+```
+anlegen. Mit folgendem Inhalt:
+```bash
+on: [push]
+
+jobs:
+  check-quality:
+    runs-on: ubuntu-latest
+    name: A job to check my code quality
+    steps:
+    - name: Check code meets quality standards
+      id: code-inspector
+      uses: codeinspectorio/github-action@master
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        code_inspector_access_key: ${{ secrets.CODE_INSPECTOR_ACCESS_KEY }}
+        code_inspector_secret_key: ${{ secrets.CODE_INSPECTOR_SECRET_KEY }}
+        min_quality_grade: 'WARNING'
+        min_quality_score: '50'
+        max_defects_rate: '0.0001'
+        max_complex_functions_rate: '0.0001'
+        max_long_functions_rate: '0.0001'
+        project_name: 'w906'
+        max_timeout_sec: '600'
+```
+Code-Inspector inspiziert unseren Code und bewertet ihn, nach jedem neuen Commit.
+![Code Inspector](https://github.com/m-vog/W906/blob/master/img/code_inspector.PNG)
 
 
-Wenn ein Problem auftaucht, werden wir per E-Mail benachrichtigt.
 ## K6
-Als Tool für CI verwenden wir Jenkins. Bei einem neuen Build, triggered Jenkins ein neues Projekt bei unserem Kanboard und einen neuen Release auf unserem GitHub
+Als Tool für CD verwenden wir Jenkins. Bei einem neuen Build, triggered Jenkins ein neues Projekt bei unserem Kanboard und einen neuen Release auf unserem GitHub
 ![Jenkins build](https://github.com/m-vog/W906/blob/master/img/jenkins_build.PNG)
 
 ```bash
 curl -u "admin:admin" http://192.168.152.14:32200/jsonrpc.php -d '{"jsonrpc": "2.0","method": "createMyPrivateProject","id": 1271584269,"params": ["test01"]}'
 curl -u w906-test:w906admin -X POST https://api.github.com/repos/m-vog/W906/releases -d '{ "tag_name": "v0.2.1", "target_commitish": "master", "name": "v1.0.1", "body": "Description of the release", "draft": false,  "prerelease": false }'
 ```
+Wenn ein Problem auftaucht, werden wir benachrichtigt.
