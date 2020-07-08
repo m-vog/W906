@@ -49,3 +49,6 @@ Auf unserem Repository haben wir ein Dockerfile abgelegt. Das Repository haben w
 ![DockerHub build](https://github.com/m-vog/W906/blob/master/img/dockerhub.PNG)
 
 Zusätzlich kann man über DockerHub direkt einen Test starten
+
+## K5
+Als Tool für CI verwenden wir Jenkins.
