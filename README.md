@@ -52,7 +52,9 @@ Auf unserem Repository haben wir ein Dockerfile abgelegt. Das Repository haben w
 Zusätzlich kann man über DockerHub direkt einen Test starten
 
 ## K5
-Für CI verwenden wir code-inspector.com Man muss auf GitHub zwei API Keys von code-inspector hinterlegen und ein Config-File unter ```ruby
+Für CI verwenden wir code-inspector.com Man muss auf GitHub zwei API Keys von code-inspector hinterlegen und ein Config-File unter
+
+ ```ruby
 .github/workflows/main.yaml
 ```
 anlegen. Mit folgendem Inhalt:
