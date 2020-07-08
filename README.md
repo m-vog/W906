@@ -94,3 +94,12 @@ curl -u "admin:admin" http://192.168.152.14:32200/jsonrpc.php -d '{"jsonrpc": "2
 curl -u w906-test:w906admin -X POST https://api.github.com/repos/m-vog/W906/releases -d '{ "tag_name": "v0.2.1", "target_commitish": "master", "name": "v1.0.1", "body": "Description of the release", "draft": false,  "prerelease": false }'
 ```
 Wenn ein Problem auftaucht, werden wir benachrichtigt.
+
+## Reflexion / Wissensstand
+### Erduan Saiti
+Ich habe ein komplett neues Themengebiet in der Informatik kennengelernt, über dass ich davor noch nie zuvor gehört habe. Das selbstständige arbeiten gefällt mir sehr an diesem Modul. Auch die Theorie erschaffte mir einen Überblick übers Ganze. Ich kann viel neues Wissen mitnehmen.
+### Laura Weber
+Das Thema DevOps war mit neu und der Einstieg durch das Distance Learning nicht einfach. Durch die Teamarbeit konnten wir das Projekt aber gut erarbeiten. Die Verknüpfung der Services fand ich persönlich eher schwer, jedoch konnten wir die Aufgabe zusammen lösen. Jetzt habe ich eine konkrete Vorstellung von DevOps und freue mich auch nach den Ferien in der neuen Abteilung damit arbeiten zu können.
+### Marc Vogelmann
+Das Wahlmodul W906 war relativ anspruchsvoll. Jedoch habe ich das Grundkonzept von DevOps verstanden und kann mir darunter auch etwas präzises vortstellen. Die Verknüpfung der verschiedenen Services war anfangs ziemlich überwältigend, jedoch konnten wir durch gute Aufgabenteilung die Aufgabe zusammen angehen.
+Ich konnte mir durch das Modul einiges an Wissen im Bereich DevOps aneignen.
