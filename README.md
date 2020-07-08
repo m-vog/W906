@@ -52,4 +52,13 @@ Auf unserem Repository haben wir ein Dockerfile abgelegt. Das Repository haben w
 Zusätzlich kann man über DockerHub direkt einen Test starten
 
 ## K5
-Als Tool für CI verwenden wir Jenkins.
+Als Tool für CI verwenden wir Jenkins. Bei einem neuen Build, triggered Jenkins ein neues Projekt bei unserem Kanboard und einen neuen Release auf unserem GitHub
+![Jenkins build](https://github.com/m-vog/W906/blob/master/img/jenkins_build.PNG)
+
+```bash
+curl -u "admin:admin" http://192.168.152.14:32200/jsonrpc.php -d '{"jsonrpc": "2.0","method": "createMyPrivateProject","id": 1271584269,"params": ["test01"]}'
+curl -u w906-test:w906admin -X POST https://api.github.com/repos/m-vog/W906/releases -d '{ "tag_name": "v0.2.1", "target_commitish": "master", "name": "v1.0.1", "body": "Description of the release", "draft": false,  "prerelease": false }'
+```
+## K6
+Für CD haben wir Docker Hub verwendet. Wenn ein neuer Commit auf das Github repository gepushed wird, wird ein Build bei DockerHub getriggered.
+![DockerHub build](https://github.com/m-vog/W906/blob/master/img/docker_success.PNG)
